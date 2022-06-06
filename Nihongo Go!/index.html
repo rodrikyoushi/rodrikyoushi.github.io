@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="styles/quizStyle.css">
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css">
+    <script src="https://kit.fontawesome.com/4e19ac279c.js" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <link rel="shortcut icon" href="#">
+    <title>Nihongo Quiz</title>
+</head>
+<body>
+    <main id="main">
+        <div class="flex-container" id="quiz">
+            <h2 id="question"></h2>
+            <div class="flex-showcase">
+                <div id="timer" class="timer">
+                    <span id="numero_contador"></span>
+                </div>
+                <img src="" class="imagen" id="imagen">
+                <p id="progreso"></p>
+            </div>
+            <div id="choices" class="btns">
+            </div>
+            <div id="audio" class="audio">
+                <span><i class="fa-solid fa-play" id="btnPlayAudio"></i>
+                    <i class="fa-solid fa-x" id="btnStop"></i>
+                    <audio src="./Audio/Instrumental.mp3" id="my-audio">
+                    </audio>
+                    <audio src="./Audio/correct-ding.mp3" id="audioCorrecto"></audio>
+                    <audio src="./Audio/megaman-x-error.mp3" id="audioError"></audio>
+                </span>
+                <input type="range" max="1" min="0" step="0.1" id="volumen">
+            </div>
+        </div>
+    </main>
+    <script src="./app.js" type="module"></script>
+</body>
+</html>

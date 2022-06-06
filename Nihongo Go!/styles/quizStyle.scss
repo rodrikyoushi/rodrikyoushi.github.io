@@ -1,0 +1,140 @@
+$blueColor: hsl(245, 59%, 55%);
+$redColor: hsl(0, 61%, 62%);
+$greenColor: hsl(106, 85%, 49%);
+*, *::before, *::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+* {
+    font-family: sans-serif;
+}
+
+body{
+    background-color: $redColor;
+    height: 100vh;
+    position: relative;
+}
+.flex-container{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-top: 50px;
+    gap: 2em;
+    h2{
+        padding: 1em 0 0;
+    }
+    .flex-showcase {
+        display: flex;
+        flex-direction: row;
+        width: 100%;
+        justify-content: space-between;
+        align-items: center;
+    }
+    @media (max-width: 500px) {
+        .flex-showcase {
+            flex-direction: column;
+        }
+    }
+    .timer{
+        text-align: center;
+        padding: 1em 0;
+        width: 30%;
+        .contador{
+            background-color: aliceblue;
+            box-sizing: border-box;
+            border-radius: 50%;
+            text-align: center;
+            width: 200px;
+            height: 200px;
+            font-size: 50px;
+            padding: 30px;
+            border: 3px solid black;
+        }
+    }
+    p{
+        text-align: center;
+        padding: 1em 0;
+        width: 30%;
+        font-size: 20px;
+    }
+    img{
+        object-fit: cover;
+        height: 200px;
+        max-width: clamp(220px, 30%,500px);
+    }
+    .btns{
+        display: flex;
+        justify-content: space-evenly;
+        flex-wrap: wrap;
+        gap: 1em 1em;
+        width: 100%;
+    .btn-opciones{
+        padding: 30px;
+        border-radius: 25px;
+        border: none;
+        width: clamp(120px, 35%, 500px);
+            &::before{
+                content: "";
+                position: absolute;
+                left: 0;
+                right: 0;
+                top: 0;
+                margin: auto;
+                background-color: $blueColor;
+                transition: animation 500ms ease;
+                z-index: -1;
+            }
+            &:hover{
+                animation: shadow-pulse 1000ms 1;
+                background-color: $blueColor;
+            }
+        }
+    }
+    .audio{
+        margin-top: 50px;
+        display: flex;
+        box-sizing: border-box;
+        border: 3px dashed #000;
+        padding: 1em;
+        background-color:hsl(284, 99%, 39%);
+        i{
+            margin-right: 10px;
+            font-size: 25px;
+        }
+    }
+}
+
+.div-score{
+    background-color: rgba(8, 38, 47, 0.4);
+    z-index: 100;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    border-radius: 5px;
+    box-shadow: -2px 0px 25px 12px rgba(0,0,0,0.60);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    h2{
+        background-color: aquamarine;
+        padding: 60px;
+        font-size: 50px;
+        font-weight: 300;
+    }
+}
+
+@keyframes shadow-pulse {
+    0% {
+    box-shadow: 0 0 0 0 rgba(22, 10, 128, 0.6);
+    }
+    100% {
+    box-shadow: 0 0 8px 16px rgba(32, 226, 215, 0);
+    }
+}
